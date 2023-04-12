@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://example.com</id>
+    <id>http://b8Weber.github.io</id>
     <title>就让来年的春风，吹断未了的思恋</title>
-    <link href="http://example.com" />
+    <link href="http://b8Weber.github.io" />
     <updated>2023-04-07T11:50:11.065Z</updated>
     <entry>
-        <id>http://example.com/2023/04/07/b&amp;p&#39;s%20Blog/</id>
+        <id>http://b8weber.github.io/2023/04/07/b&amp;p&#39;s%20Blog/</id>
         <title>My first Blog</title>
-        <link rel="alternate" href="http://example.com/2023/04/07/b&amp;p&#39;s%20Blog/"/>
+        <link rel="alternate" href="http://b8weber.github.io/2023/04/07/b&amp;p&#39;s%20Blog/"/>
         <content type="html">&lt;link rel=&#34;stylesheet&#34; class=&#34;aplayer-secondary-style-marker&#34; href=&#34;\assets\css\APlayer.min.css&#34;&gt;&lt;script src=&#34;\assets\js\APlayer.min.js&#34; class=&#34;aplayer-secondary-script-marker&#34;&gt;&lt;/script&gt;&lt;p&gt;这是我的第一篇 Blog’s b&amp;amp;p，记录一下！！！&lt;/p&gt;
 &lt;p&gt;1. 搭建博客花了我整整 3 天的时间：包括买域名，身份核查等等…&lt;/p&gt;
 &lt;p&gt;2. 期间遇到的各种问题，实在是让我头疼，我找遍了所有的类似解答，都找不到，最后是重新选了一个 themes。&lt;/p&gt;
