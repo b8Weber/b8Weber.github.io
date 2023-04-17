@@ -5,6 +5,14 @@
     "home_page_url": "http://b8Weber.github.io",
     "items": [
         {
+            "id": "http://b8weber.github.io/2023/04/16/GDOUCTF2023%E9%83%A8%E5%88%86web/",
+            "url": "http://b8weber.github.io/2023/04/16/GDOUCTF2023%E9%83%A8%E5%88%86web/",
+            "title": "GDOUCTF2023部分web",
+            "date_published": "2023-04-16T10:10:34.000Z",
+            "content_html": "<center><h2>记录一个人参赛GDOUCTF</h2></center>\n<h3>web题目：</h3>\n<h4>hate eat snake</h4>\n<font face='宋体'>1.先打开题目，查看源代码，发现f12好像用不了，直接右键检查页面\n<img src=\"B:\\blog8\\source\\_posts\\snake1.png\">\n<br>\n<br>\n2.我开始玩了几次，发现手速还是不行，毕竟没单身19年，QAQ,这速度不是人玩的，不过我看到群里真有大佬手玩贪吃蛇666！！！<br>\n我观察了源码，发现js改不到，就从css下手吧，我改了很多没用的，比如height，width等等，发现都不咋行，因为蛇是按比例来改变的，都是3~4秒就没了<br>\n<img src=\"B:\\blog8\\source\\_posts\\snake2.png\">\n3.我仔细观察发现这题是有格子大小，就是<'td'>，然后我就复制粘贴了几万个<'td'>,这样贪吃蛇就会一直跑不会撞到墙。\n<img src=\"B:\\blog8\\source\\_posts\\snake3.png\">\n4.注意，要改食物上面空间部分的td，要不然还是会撞\n<br>\n<br>\n最终结果：\n<img src=\"B:\\blog8\\source\\_posts\\snake5.png\">\n<h5>ps:听说大佬们还有很多解题方法<br>\n1.删除js，等待60s就能出了\n<br>\n2.直接控制台改分数，图片来自大佬<br>\n<img src=\"B:\\blog8\\source\\_posts\\snake4.png\"><br>\n3.复制网页到本地修改js<br>\n4.按住空格60s<br>\n5.按空格跳到其它界面蹦出来flag<br>\n解法真的太多了，我只列出来部分解法\n<br>\n<br>\n<br>\n<br>\n<h4>受不了一点</h4>\n1.打开题目就是一段php代码<br>\n<img src=\"B:\\blog8\\source\\_posts\\受不了一点1.png\">\n2.我们按照要求来就行了，因为题目比较简单，我就直接放payload<br>\n<img src=\"B:\\blog8\\source\\_posts\\受不了一点2.png\">\n最后得到：<br>\n<img src=\"B:\\blog8\\source\\_posts\\受不了一点3.png\">\n<br>\n<br>\n<br>\n<br>\n<h4>EZ WEB</h4>\n1.我们先f12发现有提示,直接打开<br>\n<img src=\"B:\\blog8\\source\\_posts\\EZ_WEB1.png\">\n2.发现一段源代码app.py<br>\n<img src=\"B:\\blog8\\source\\_posts\\EZ_WEB2.png\">\n3.代码审计<br>\n①用GET方式输入'/'返回index.php<br>\n②用GET方式输入'/src'返回app.py<br>\n③用PUT方式输入'/super-secret-route-nobody-will-guess'返回flag<br>\n那么我们就要用PUT方式输入，就能得到flag<br>\n4.直接抓包,将GET方法改为PUT，成功得到flag<br>\n<img src=\"B:\\blog8\\source\\_posts\\EZ_WEB3.png\">\n<p>第 4 题没做出来，还是太菜了，要多学习！！！</p>\n",
+            "tags": []
+        },
+        {
             "id": "http://b8weber.github.io/2023/04/07/b&p's%20Blog/",
             "url": "http://b8weber.github.io/2023/04/07/b&p's%20Blog/",
             "title": "My first Blog",
